@@ -67,14 +67,17 @@ h3{font-size:1.35rem;font-weight:800;margin-bottom:12px}
 .choice-panel--home{clip-path:polygon(0 0,61% 0,39% 100%,0 100%)}
 .choice-panel--business{clip-path:polygon(61% 0,100% 0,100% 100%,39% 100%)}
 .choice-panel__image{position:absolute;inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px);object-fit:cover;filter:grayscale(1) blur(6px);transform:scale(1.03);z-index:-2;transition:filter .55s,transform .65s}
-.choice-panel__shade{position:absolute;inset:0;z-index:-1;background:rgba(20,21,23,.65)}
-.choice-panel:hover .choice-panel__image,.choice-panel:focus-visible .choice-panel__image{filter:grayscale(1) blur(2px);transform:scale(1.075)}
+.choice-panel__shade{position:absolute;inset:0;z-index:-1;background:rgba(20,21,23,.65);transition:background .45s ease}
+.choice-panel:hover .choice-panel__image,.choice-panel:focus-visible .choice-panel__image{filter:grayscale(1) blur(12px);transform:scale(1.10)}
+.choice-panel:hover .choice-panel__shade,.choice-panel:focus-visible .choice-panel__shade{background:rgba(20,21,23,.77)}
 .choice-panel--business .choice-panel__shade{background:rgba(20,21,23,.67)}
 .choice-panel .eyebrow{color:#FF7277}
-.choice-panel__content{width:min(44%,610px);margin-left:clamp(24px,6.3vw,110px);padding-top:35px}
+.choice-panel__content{width:min(44%,610px);margin-left:clamp(24px,6.3vw,110px);padding-top:35px;transition:transform .45s ease}
+.choice-panel:hover .choice-panel__content,.choice-panel:focus-visible .choice-panel__content{transform:translateY(-8px)}
+.choice-panel:focus-visible .choice-panel__content{outline:3px solid var(--white);outline-offset:10px;border-radius:6px}
 .choice-panel--business .choice-panel__content{margin-left:auto;margin-right:clamp(24px,6.3vw,110px);text-align:right}
 .choice-panel .choice-title{font-size:clamp(2.45rem,4.8vw,5.4rem);margin-bottom:18px;max-width:620px;font-weight:800;line-height:1.1;letter-spacing:-.04em}
-.choice-panel p:not(.eyebrow){font-size:clamp(1rem,1.35vw,1.18rem);max-width:450px;margin-bottom:27px;color:#f3f4f5}
+.choice-panel p:not(.eyebrow){font-size:clamp(1rem,1.35vw,1.18rem);max-width:450px;margin-bottom:0;color:#f3f4f5}
 .choice-panel--business p:not(.eyebrow){margin-left:auto}
 .chooser::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:var(--red);clip-path:polygon(calc(61% - 2.5px) 0,calc(61% + 2.5px) 0,calc(39% + 2.5px) 100%,calc(39% - 2.5px) 100%)}
 .choice-logo{position:absolute;top:24px;left:50%;transform:translateX(-50%);z-index:5}

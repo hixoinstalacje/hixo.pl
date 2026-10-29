@@ -37,45 +37,6 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
   document.querySelectorAll('.reveal').forEach(element => element.classList.add('is-visible'));
 }
 
-// Dostępny filtr realizacji: przyciski utrzymują aria-pressed.
-const filterButtons = document.querySelectorAll('[data-filter]');
-const filterCards = document.querySelectorAll('[data-category]');
-filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const category = button.dataset.filter;
-    filterButtons.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
-    filterCards.forEach(card => {
-      card.hidden = category !== 'all' && card.dataset.category !== category;
-    });
-  });
-});
-
-// Lightbox HTML <dialog>: domyślna obsługa Escape, focus i powrotu do wyzwalacza.
-const lightbox = document.getElementById('lightbox');
-if (lightbox && typeof lightbox.showModal === 'function') {
-  const image = lightbox.querySelector('[data-lightbox-image]');
-  const caption = lightbox.querySelector('[data-lightbox-caption]');
-  const close = lightbox.querySelector('[data-lightbox-close]');
-  document.querySelectorAll('[data-lightbox]').forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const original = trigger.querySelector('img');
-      if (!original) return;
-      image.src = original.currentSrc || original.src;
-      image.alt = original.alt;
-      caption.textContent = trigger.getAttribute('data-caption') || original.alt;
-      lightbox.showModal();
-      close.focus();
-    });
-  });
-  close.addEventListener('click', () => lightbox.close());
-  lightbox.addEventListener('click', event => {
-    if (event.target === lightbox) lightbox.close();
-  });
-  lightbox.addEventListener('close', () => {
-    image.removeAttribute('src');
-  });
-}
-
 // Formularze: przed uruchomieniem trzeba zamienić TWOJ_ENDPOINT w atrybucie action.
 // Do czasu podmiany blokujemy wysłanie na nieistniejący adres.
 document.querySelectorAll('form[data-contact-form]').forEach(form => {

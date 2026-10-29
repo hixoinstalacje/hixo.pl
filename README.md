@@ -18,13 +18,10 @@ Otwórz plik `index.html` w przeglądarce. Wszystkie linki wewnętrzne używają
 3. W trzech formularzach zamień `TWOJ_ENDPOINT` w `action` na identyfikator
    formularza z Formspree. Dopóki go nie ustawisz, JavaScript blokuje wysyłkę.
    Weryfikuj wiadomości w panelu Formspree. Zapasowe linki `mailto:` już są.
-4. Podmień obrazki z `img/` według `img/README.txt`.
-5. Zastąp przykładowe opinie, opisy realizacji i informacje o uprawnieniach
-   wyłącznie zweryfikowanymi danymi.
+4. Podmień zdjęcia tła z `img/` według `img/README.txt`.
+5. Strona nie zawiera przykładowych opinii ani fikcyjnych realizacji.
 6. Uzupełnij i zweryfikuj `polityka-prywatnosci.html` przed uruchomieniem
    formularza, również w zakresie transferu danych, retencji i usług Google Fonts.
-7. Jeśli chcesz mapę, wstaw `iframe` w `kontakt.html` w miejscu oznaczonego
-   komentarza i uwzględnij dostawcę map w informacji o prywatności.
 
 ## Publikacja na GitHub Pages
 
@@ -49,7 +46,7 @@ Zmiany DNS mogą propagować się nawet 24 godziny.
 ## Testy ręczne przed publikacją
 
 - Menu mobilne i nawigacja klawiaturą (Tab, Enter, Escape).
-- Filtr realizacji i podgląd zdjęć (Escape zamyka).
+- Efekt rozmycia po najechaniu oraz zachowanie pełnych paneli jako linków.
 - Formularze po dodaniu endpointów i rzeczywistych adresów.
 - Wygląd na telefonie oraz w trybie `prefers-reduced-motion`.
 - Brak pustych placeholderów i poprawne dane SEO.
